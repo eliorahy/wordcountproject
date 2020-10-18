@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Boost Strap</title>
+	<meta charset="utf-8">
+
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- Bootstrap -->
+	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+	<!-- jQuery library -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<!-- Latest compiled JavaScript -->
+	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <style>
+        div#nigga {
+            border: 2px solid darkcyan;
+            background-color: lightcyan;
+        }
+        .victim {
+           color: darksalmon;
+            font-family: "Comic Sans MS";
+            font-weight: bolder;
+
+        }
+body{
+             background-color: #ECFAFC;
+        }
+
+
+    </style>
+    <script>
+        $(function () {
+  $('[data-toggle="tooltip"]').tooltip()
+})
+    </script>
+</head>
+<body>
+
+    <div class="container">
+        <div class="row" >
+            <div class="col-sm-12">
+                 <h1 style="text-align: center;">There are <span class="victim">  {{ count }}  </span> words in your text</h1>
+             </div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-6">
+                <a href="{% url 'homepage'  %}" class="btn btn-primary">Start Again</a><br>
+             </div>
+
+            <div class="col-sm-6">
+                <button type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="top" title="{{ fulltext }}">
+                    Click to see your text
+                </button>
+             </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12">
+                 <h2>Word Count:</h2>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div id="nigga" class="col-sm-6">
+             Word
+            </div>
+            <div id="nigga" class="col-sm-6">
+            Count
+            </div>
+        </div>
+
+    {% for word, counttotal in sortedwords %}
+        <div class="row">
+            <div id="nigga" class="col-sm-6">
+            {{ word }}
+            </div>
+            <div id="nigga" class="col-sm-6">
+             {{ counttotal }}
+            </div>
+        </div>
+    {% endfor %}
+    </div>
+</body>
+</html>

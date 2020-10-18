@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Boost Strap</title>
+	<meta charset="utf-8">
+
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- Bootstrap -->
+	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+	<!-- jQuery library -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<!-- Latest compiled JavaScript -->
+	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+     <style>
+        body{
+             background-color: #ECFAFC;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+<h1>WORD COUNT</h1>
+    <form action="{% url 'count' %}">
+  <div class="form-group">
+    <label for="fulltext">Full Text: </label>
+      <textarea class="form-control" id="fulltext" name="fulltext" aria-describedby="fulltextHelp" placeholder="Enter text"></textarea>
+    <small id="fulltext" class="form-text text-muted">Enter whatever text you want here, we do not judge. <3 </small>
+  </div>
+  <button type="submit" class="btn btn-primary">Count</button>
+  <a href="{% url 'about' %}" class="btn btn-info">About us</a>
+</form>
+
+</div>
+</body>
+
+
+</body>
+</html>
